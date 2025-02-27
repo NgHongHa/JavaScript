@@ -1,12 +1,22 @@
-// hàm prompt
-prompt("Nhập vào tên của bạn"); // hàm này hiển thị popup nhưng có thêm ô nhập liệu
-// khởi tạo biến ( khao báo có luôn giá trị)
-var myName = "Nguyen Hong Ha"; // khai báo biến trước phiên bản es6
-let yourName = "your Name"; // khai báo biến bằng let
-console.log(myName);
-console.log(yourName);
-// khai báo biến
-var firtName;
-// ví dụ
-let useName = prompt("nhập tên");
-console.log(useName);
+// các kiểu dữ liệu trong js
+// 1 string
+let myString = "đây là chuỗi";
+console.log(myString);
+console.log(typeof myString);
+// number kiểu số (số ngyên hoặc số thực)
+let soNguyen = 10;
+let soThuc = 3.14;
+console.log(soNguyen);
+console.log(soThuc);
+// kiểu boolen
+let check = true;
+console.log(typeof check);
+// kiểu undefined
+let diem;
+console.log(typeof diem);
+// kiểu null
+let bug = null;
+console.log(typeof bug); // lỗi này sẽ cho kiểu dữ liệu của null là object
+// xuất số nguyên an toàn tối đa và tối thiểu
+console.log(" số nguyên an toàn tối đa" + Number.MAX_SAFE_INTEGER);
+console.log(" số nguyên an toàn tối thiểu" + Number.MIN_SAFE_INTEGER);
