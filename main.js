@@ -1,4 +1,9 @@
-let so = prompt("nhập vào 1 số ");
-//   hàm is NaN kiểm tra có thể chuyển đổi sang số không trả về true nếu không  chuyển đuuợc
-let a = "111";
-console.log(isNaN(a));
+// hàm Math.random (0-1)
+let A = Math.random();
+console.log(A);
+// lấy số 0 -10
+let B = Math.random() * 10;
+
+// lấy số nguyên
+let C = parseInt(Math.random() * 10);
+console.log(C);
