@@ -1,6 +1,9 @@
-// // toán tử logic
-// && tre khi cả 2 đều đúng
-let i = 7;
-console.log(i > 0 && i < 10);
-// || toán tử hoặc
-// !toán tử phủ định
+// // các phép so sánh
+// != khác
+// > lớn hơn
+// < nhỏ hơn
+// >= lớn hơn hoặc bằng
+// <= nhỏ hơn hoặc bằng
+// == so sánh bằng ko so sánh kiểu dữ liệu
+// ==== so sánh bằng có so sánh kiểu dữ liệu
+// tương tự !==
