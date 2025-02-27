@@ -1,9 +1,8 @@
-// hàm Math.random (0-1)
-let A = Math.random();
-console.log(A);
-// lấy số 0 -10
-let B = Math.random() * 10;
+// if  else
+let dtb = Number(prompt("nhập điểm"));
 
-// lấy số nguyên
-let C = parseInt(Math.random() * 10);
-console.log(C);
+if (dtb > 5) {
+  console.log("bạn đã đỗ");
+} else {
+  console.log("bạn đã tạch");
+}
