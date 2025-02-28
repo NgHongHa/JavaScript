@@ -1,18 +1,38 @@
-// toán tử ba ngôi
-// biến = biểu thức 1 ? biểu thức 2 : biểu thức 3
-let number = 10;
-let mesenger = number >= 0 ? "số dương" : "số âm";
-console.log(mesenger);
-// nếu đúng thì trả về giá trị trước dấu : sai thì trả về giá trị sau
-// có thể dùng toán tử ba ngôi hoặc ifelse mục đích của cái này để so sánh điều kiện thôi
-// ví dụ  viết ctrinh nhập điểm
-let diem = parseFloat(prompt("nhập vào điểm của bạn"));
-let xepLoai =
-  diem >= 8
-    ? "giỏi"
-    : diem < 8 && diem >= 6.5
-    ? "khá"
-    : diem < 6.5 && diem >= 5
-    ? "trung bình"
-    : "yếu";
-console.log(xepLoai);
+// switch case
+let number = "2";
+switch (number % 2) {
+  case 0:
+    console.log("số chẵn");
+    break;
+  case 1:
+    console.log("lẻ");
+    break;
+  default:
+    console.log("không phải số");
+}
+// ví dụ
+let chose = Number(
+  prompt(`Chọn cách tìm kiếm:
+  1. tìm theo tên tác giả
+  2. tìm theo tên nhà xuất bản
+  3 tìm theo tiêu đề
+  4 tìm theo tên
+  `)
+);
+switch (chose) {
+  case 1:
+    alert("bạn đã chọn tìm theo tác giả");
+    break;
+  case 2:
+    alert("bạn đã chọn tìm theo nhà xuất bản");
+    break;
+  case 3:
+    alert("bạn đã chọn tìm theo tiêu đề");
+    break;
+  case 4:
+    alert("bạn đã chọn tìm theo tên");
+    break;
+  default:
+    alert("lựa chọn không hợp lệ");
+    break;
+}
