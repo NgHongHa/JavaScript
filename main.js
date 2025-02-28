@@ -1,38 +1,14 @@
-// switch case
-let number = "2";
-switch (number % 2) {
-  case 0:
-    console.log("số chẵn");
-    break;
-  case 1:
-    console.log("lẻ");
-    break;
-  default:
-    console.log("không phải số");
+// // vòng lặp while
+// // thực hiện đến khi điều kiện không còn đúng sẽ thoát vòng lặp
+// let i = 1;
+// while (i <= 5) {
+//   console.log(i);
+//   i++;
+// }
+// ví dụ nhập n trong khoảng từ 1 đến 99 nếu nhập sai thì bắt nhập lại
+let n = prompt(" nhập vào số  n  (từ 1 đến 99)");
+console.log(n);
+while (isNaN(n) || n < 1 || n > 99 || n % 1 !== 0) {
+  n = Number(prompt("số bạn nhập ko hợp lệ vui lòng nhập lại"));
 }
-// ví dụ
-let chose = Number(
-  prompt(`Chọn cách tìm kiếm:
-  1. tìm theo tên tác giả
-  2. tìm theo tên nhà xuất bản
-  3 tìm theo tiêu đề
-  4 tìm theo tên
-  `)
-);
-switch (chose) {
-  case 1:
-    alert("bạn đã chọn tìm theo tác giả");
-    break;
-  case 2:
-    alert("bạn đã chọn tìm theo nhà xuất bản");
-    break;
-  case 3:
-    alert("bạn đã chọn tìm theo tiêu đề");
-    break;
-  case 4:
-    alert("bạn đã chọn tìm theo tên");
-    break;
-  default:
-    alert("lựa chọn không hợp lệ");
-    break;
-}
+alert("bạn đã nhập số : " + n);
