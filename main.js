@@ -1,12 +1,21 @@
-/* so sánh var let const
-var : khai báo sau nhưng nó sẽ đẩy lên trên ( tuy nhiên chỉ khai báo chứ ko khởi tạo giá trị)
-let : (sau pb es6) không thể khai báo sau 
-note let, const phải khai báo trước, dùng var khai báo sau biến bị hoisted
-
-ví dụ */
-console.log(c); // *
-var c = 9; // * undefi
-let c = 9; // lỗi không sử dụng được\
-// phạm vi
-//   var có phạm vi của hàm
-// let có phạm vi blockscope
+// đệ quy
+function giaiThua(N) {
+  if (N === 0 || N === 1) {
+    return 1;
+  } else {
+    return N * giaiThua(N - 1);
+  }
+}
+var kq = giaiThua(3);
+console.log(kq);
+// dãy fibonaci  1 1 2 3 5 8 13 21 ---- fn = f(n-1)+ f(n-2) điểm dừng n <=2 thì fn =1
+function f(n) {
+  if (n <= 2) {
+    return 1;
+  } else {
+    return f(n - 1) + f(n - 2);
+  }
+}
+// gọi hàm
+kqf = f(10);
+console.log(kqf);
