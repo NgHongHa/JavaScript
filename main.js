@@ -1,18 +1,12 @@
-// indexOf
-let s1 = " học học nữa học mãi";
-let s2 = s1.indexOf("n"); //tìm kí tự n từ vị trí đầu tiên
-let s3 = s1.indexOf("n", 4); // tìm kí tự n từ vị trí thứ 4
-// nếu ko tồn tại thì trả về -1
-// lastindexOf
-let s4 = s1.lastIndexOf("h");
-console.log(s4); // chữ h cuối nằm ở index 13
-let s5 = s1.lastIndexOf("h", 6);
-console.log(s5); // chữ h cuối của khoảng đầu đến 6 nằm ở index 5
+let s1 = "học học nữa học mãi";
+console.log(s1.startsWith("h"));
+//startsWith kiểm tra chuỗi có bắt đầu bằng h không
 
-// nếu ko tồn tại thì trả về -1
+console.log(s1.startsWith("ọ", 1));
+//startsWith kiểm tra chuỗi tính từ index1 có bắt đầu bằng h không
 
-//  includes chỉ kiểm tra có hay không trả về true false
-s6 = s1.includes("n");
-console.log(s6);
-s7 = s1.includes("n", 10);
-console.log(s7);
+console.log(s1.endsWith("i"));
+//endsWithWith kiểm tra chuỗi có kết thúc bằng h không
+
+console.log(s1.endsWith("a", 11));
+//startsWith kiểm tra chuỗi tính từ đầu đến 10 có kt là a không ( kí tự index 10 có phải a không) ++ nó chỉ kiểm tra đến sát 11 khi nhập vào 11 chưa đến 11
