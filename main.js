@@ -1,15 +1,12 @@
-// spread toán tử clone mảng
-m1 = [1, 2, 3, 4];
-m2 = [...m1];
-console.log(m2);
-function sum(a, b, c) {
-  return a + b + c;
-}
-let number = [1, 2, 3];
-let result = sum(...number);
-// phương thức sort
-// nếu ko truyền tham số so sánh hàm sẽ so sánh giá trị trong unicode rồi sx
-// nếu truyền tham số
-let m4 = [9, 5, 6, 4, 8];
-let sx = m4.sort((a, b) => a - b);
-console.log(sx); // sx tăng dần ( a- b lớn hơn 0 thì giữ nguyên, nhỏ hơn 0 thì đảo vị trí)
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+
+console.log(sum); // Output: 15
+/*
+accumulator: Biến tích lũy giá trị trong mỗi lần lặp.
+currentValue: Giá trị hiện tại của phần tử trong mảng.
+0: Giá trị khởi tạo cho accumulator.
