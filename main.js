@@ -49,3 +49,11 @@ console.log(student.fullName);
 console.log(teacher["1 fullName"]); // dùng khi gặp các key đặc biệt ( có khoảng trắng)
 // 3  truy cập phương thức
 console.log(student.getAge()); // lưu ý khi dùng phương thức phải thêm ()
+// 4 thêm, xóa thuộc tính
+student.email = "ha2k3.dev@gamil.com";
+student["web"] = "http///";
+// thêm thuộc tính mới
+console.log(student);
+//_______________________
+delete student.email; // xóa
+student.web = "http"; // sửa
