@@ -1,9 +1,9 @@
-// date Time
-let currentDate = new Date();
-let year = currentDate.getFullYear;
-let month = currentDate.getMonth + 1;
-let day = currentDate.getDate;
-let hours = currentDate.getHours;
-let minuter = currentDate.getMonth;
-// xuất thời gian tại mốc 0
-let timestamp1 = new Date();
+// setTimeout
+let hello = function () {
+  console.log("Helllo");
+};
+setTimeout(hello, 3000);
+setTimeout(() => {
+  console.log("hello2");
+}, 5000);
+// setInterval  lặp đi lặp lại sau time cố định
