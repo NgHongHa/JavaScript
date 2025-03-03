@@ -1,4 +1,9 @@
-// tách chuỗi trả về mảng bằng split
-let students = "Hà, Nam , Dũng, Khoa";
-let arr = students.split(","); // nếu nhập vào chuỗi rỗng sẽ tác từng kí tự
-console.log(arr);
+// date Time
+let currentDate = new Date();
+let year = currentDate.getFullYear;
+let month = currentDate.getMonth + 1;
+let day = currentDate.getDate;
+let hours = currentDate.getHours;
+let minuter = currentDate.getMonth;
+// xuất thời gian tại mốc 0
+let timestamp1 = new Date();
