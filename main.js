@@ -1,3 +1,9 @@
+// mỗi đối tượng đều có nguyên mẫu cha mẹ (prototype) trừ object base
+let M = new Array();
+console.log(typeof M);
+console.log(M);
+// mỗi đối tượng trong js đều có đối tượng prototype ( nguyên mẫu/ cha mẹ)
+
 function SinhVien(fullName, ID, birthYear, homeTown) {
   // thuộc tính
   this.fullName = fullName;
@@ -11,4 +17,5 @@ function SinhVien(fullName, ID, birthYear, homeTown) {
 }
 const sv1 = new SinhVien("Nguyen Hong Ha", 1, 2003, "Thanh Hóa");
 const sv2 = new SinhVien("Nguyen Ha", 2, 2004, "HN");
-console.log(sv1.showInfo());
+// kiểm tra nguyên mẫu cha mẹ đối tượng
+console.log(Object.getPrototypeOf(sv1));
