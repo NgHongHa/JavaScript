@@ -1,0 +1,24 @@
+h1 {
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Khoảng cách giữa các ô */
+  padding: 10px;
+}
+
+div {
+  width: 80px; /* Giảm kích thước để phù hợp với nhiều hàng */
+  height: 80px;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 14px; /* Giảm kích thước chữ nếu cần */
+}
