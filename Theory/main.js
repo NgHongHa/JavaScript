@@ -1,29 +1,81 @@
-//Getter and Setter JavaScript
-class School {
-  constructor(id, name, birthYear, score) {
-    this.id = id;
-    this.name = name;
-    this.birthYear = id;
-    this._score = score; // thêm dấu _ để thể hiện nó ở trạng thái được bảo vệ ( cái này là tự quy ước)
+// Public fields : Trường công khai, trường công cộng
+// Private fields : Trường riêng tư
+// Public method : Phương thức công khai
+// Private method: Phương thức riêng tư
+
+// Thêm dấu gạch dưới: Private fields : Trường riêng tư theo quy ước,
+// và nó vẫn có thể truy cập trực tiếp từ bên ngoài
+class Wallet {
+  #pin; //Private fields
+  #balance; //Private fields
+  #isPinEntered = false; //Private fields
+  constructor(bankName, pin) {
+    this.bankName = bankName;
+    this.#pin = pin;
+    this.#balance = 0; //Tài khoản bằng 0 lúc tạo thẻ
   }
-  // phương thức
-  calcAger(currentYear) {
-    return currentYear - this.birthYear;
+
+  //Phương thức gửi tiền vào tài khoản
+  deposit(value) {
+    if (!this.#isPinEntered) {
+      console.log("Kiểm tra lại mã pin");
+      return;
+    }
+    this.#balance += value;
   }
-  // getter cho thuộc tính
-  get score() {
-    return this._score;
+
+  //=====================================
+  // Private method
+  #validatePin(pin) {
+    return this.#pin === pin;
   }
-  // setter cho thuộc tính
-  set score(value) {
-    // thêm biểu thức logic kiểm tra
-    if (vale >= 0 && value <= 100) {
-      this._score = value;
+
+  // Public method
+  enterPin(pin) {
+    if (this.#validatePin(pin)) {
+      this.#isPinEntered = true;
     } else {
-      console.log("ko hợp lệ");
+      console.log("Invalid pin.");
     }
   }
+
+  //====================================
+  //Rút tiền
+  withdraw(value) {
+    if (!this.#isPinEntered) {
+      console.log("Kiểm tra lại mã pin");
+      return;
+    }
+    if (value > this.#balance) {
+      console.log("Số tiền trong tài khoản không đủ");
+    } else {
+      this.#balance -= value;
+      console.log("Rút tiền thành công");
+    }
+  }
+
+  // Getter
+  get balance() {
+    if (!this.#isPinEntered) {
+      console.log("Kiểm tra lại mã pin");
+      return;
+    }
+    return this.#balance;
+  }
 }
-// tạo đối tượng
-const ha = new School("p1", "Ha", 2003, 95);
-console.log(ha.id);
+
+// Tạo đối tượng
+const wallet = new Wallet("MB bank", "1234");
+
+// Nhập mã  pin
+wallet.enterPin("1234");
+// console.log(wallet.#balance);
+// Gửi tiền
+wallet.deposit(1000);
+//Rút tiền
+wallet.withdraw(250);
+// Xem tài khoản, pin
+// console.log(wallet.#balance);
+// console.log(wallet.#pin);
+
+console.log(wallet.balance);
