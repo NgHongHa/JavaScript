@@ -1,45 +1,27 @@
-/**
- [D]rower [O]bject [M]odel
-Document node toan bo tai lieu html
-Element node dai dien cho 1 ptu
-Text node  
-Atrribute node
+//36.7 - Dom - textContent, innerHTML, innerText
+// Chọn đến phần tử có id là "demo"
+let elm = document.getElementById("demo");
 
-DOM API
- */
+//textContent
+console.log("textContent: ");
+console.log(elm.textContent);
 
-//. getAttribute
-const firtsLink = document.querySelector("a");
-const linkHref = firtsLink.getAttribute("href"); // getAttribute
-console.log(linkHref);
-firtsLink.setAttribute("target", "blank");
-// su dung all the a trong ul
-const link = document.querySelectorAll("ul a");
-link.forEach((singerlinhk) => {
-  singerlinhk.setAttribute("target", "blank"); // setAttribute
-});
-// Sử dụng querySelector để chọn phần tử đầu tiên có class là "list"
-const item1 = document.querySelector(".list");
+//innerText
+console.log("innerText: ");
+console.log(elm.innerText);
 
-// hasAttribute
-// Kiểm tra xem phần tử có thuộc tính class không ?
-console.log(item1.hasAttribute("class"));
+//innerHTML
+console.log("innerHTML: ");
+console.log(elm.innerHTML);
 
-const item2 = document.querySelector("#heading_title");
-console.log(item2.hasAttribute("style"));
-
-// .removeAttribute
-// Loại bỏ 1 thuộc tính khỏi phần tử
-item2.removeAttribute("style");
-
-// Kiểm tra lại xem thuộc tính style đã bị loại bỏ hay chưa?
-console.log(item2.hasAttribute("style"));
-
-//Bài tập: Xóa toàn bộ thuộc tính href trong các thẻ a nằm trong ul
-// Chọn tất cả các thẻ a trong phần tử ul
-const anchorTags = document.querySelectorAll("ul a");
-
-// Lặp qua từng thẻ a và xóa thuộc tính href
-anchorTags.forEach((anchor) => {
-  anchor.removeAttribute("href");
-});
+// Chọn đến phần tử có id là "demo2"
+let elm2 = document.getElementById("demo2");
+elm2.innerHTML = "<p><i>Tuhoc.cc</i> </p>";
+elm2.textContent = "<p><i>Tuhoc.cc</i> </p>";
+// goi y html trong js
+/*
+"emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true
+*/
