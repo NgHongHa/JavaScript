@@ -1,51 +1,66 @@
-// : append, prepend :
-//Phương thức dùng để thêm một hoặc nhiều phần tử con vào trong phần tử cha
-//append: Thêm vào cuối
-//prepend: Thêm vào đầu
-// 🤞 Ví dụ 1:
-//Bước 1. create element
-//Cú pháp: document.createElement('element')    //element: tên thẻ cần tạo
-const newImg = document.createElement("img");
-console.log(newImg);
+// 36.13 - Dom - appendChild
+//Xác định phần tử cha
+let parentElm = document.querySelector("#header");
+console.log(parentElm);
 
-//kiểm tra toàn bộ thuộc tính và phương thức newImg
-console.dir(newImg);
+//Tạo phần tử con mới, ví dụ thẻ p
+let p_elm = document.createElement("p");
+// thêm nội dung vào thẻ p
+p_elm.textContent = "Một con vịt xòe ra 2 cái cánh";
+// Thêm style
+p_elm.style.color = "red";
+//Thêm class cho thẻ p_elm
+p_elm.setAttribute("Class", "doan_van");
 
-//Bước 2. set attribute
-// newImg.setAttribute("src", "./assets/img/most_slide_1.jpg");
+/*
+1. **Đối tượng có thể thêm**:
+   - `appendChild` chỉ thêm được đối tượng `Node`.
+   - `append` thêm được cả `Node` và chuỗi văn bản.
+*/
 
-//cách 2 :
-newImg.src = "./assets/img/most_slide_1.jpg";
+// parentElm.appendChild(p_elm);
+// parentElm.append(p_elm);
+//sau khi có class mới được thêm,
+//chúng ta có thể CSS tùy biến cho chúng
 
-//Bước 3. append: thêm vào 1 phần tử đã có sẵn
-document.body.append(newImg); //thêm vào cuối phần tử cha(trong trường hợp này là body)
-//set chiều rộng 100% viewport width
-newImg.style.width = "100vw";
+// //appendChild Không thêm được văn bản
+// parentElm.appendChild("Hôm nay thật tuyệt");
+// parentElm.append("Hôm nay thật tuyệt");
+//TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'.
 
-// 🤞 Ví dụ 2: Thêm thẻ p
-const newText = document.createElement("p"); //bước 1: tạo element
-newText.textContent = "Xin chào, em đang học JS"; // bước 2: set attribute
-document.body.append(newText);
+/*
+2. **Trả về giá trị**:
+   - `appendChild` trả về phần tử vừa được thêm.
+   - `append` không trả về giá trị.
+*/
+// console.log(parentElm.append(p_elm)); //p.doan_van (return node được thêm)
+// console.log(parentElm.appendChild(p_elm)); // undefined
 
-//ví dụ 3: thêm vào 1 phần tử khác
-const p = document.querySelector(".hero__desc");
-p.append("Sông cầu nước chảy lơ thơ, có đôi trai gái ngồi hơ quần đùi");
+/*
+3. **Thêm nhiều phần tử**:
+   - `appendChild` chỉ thêm được một phần tử mỗi lần gọi.
+   - `append` có thể thêm nhiều phần tử hoặc chuỗi văn bản trong một lần gọi.
+*/
 
-//Ví dụ 4: Thêm nhiều phần tử vào cuối phần tử cha
-// Tạo các phần tử mới
-let elm1 = document.createElement("p");
-elm1.textContent = "Đây là đoạn văn mới thêm";
+//tạo thêm 1 phần tử
+let h3 = document.createElement("h3");
+h3.textContent = "Đây là thẻ H3 mới thêm";
 
-let elm2 = document.createElement("span");
-elm2.textContent = "Đây là thẻ span";
+// parentElm.append(p_elm, h3, "Đây là văn bản mới thêm"); //thêm được nhiều node, hoặc text cùng lúc
+// parentElm.appendChild(p_elm, h3, "Đây là văn bản mới thêm"); //không thêm được đồng thời
+// Thêm bằng appendChild, thêm từng phần tử
+parentElm.appendChild(p_elm);
+parentElm.appendChild(h3);
 
-//Lấy phần tử cha
-let container = document.querySelector(".hero__heading");
-// Thêm nhiều phần tử mới vào cuối phần tử cha
-container.append(elm1, elm2, "Some more text");
+//Do appendChild có giá trị trả về nên:
+// Ta có thể Thêm và ngay lập tức thao tác với phần tử
+// Tạo phần tử mới
+let btn = document.createElement("button");
+btn.textContent = "Click me";
+// Thêm phần tử mới vào một phần tử cha và nhận giá trị trả về
+let addedBtn = parentElm.appendChild(btn);
 
-// Prepend
-//Nếu muốn thêm vào đầu phần tử cha thì dùng prepend
-container.prepend("Hi ! ");
-
-console.log(container.prepend("Hi ! "));
+// Gán sự kiện click cho phần tử vừa được thêm
+addedBtn.addEventListener("click", function () {
+  alert("Bạn vừa click vào nút");
+});
