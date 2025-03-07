@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript</title>
   </head>
+
   <body>
-    <h3>Vui lòng xem danh sách sau:</h3>
+    <h1 id="heading_title">DOM</h1>
+
+    <!-- menu list  -->
     <ul>
-      <li class="list">Điều khoản sử dụng</li>
-      <li class="list" id="list chose">Chính sách bảo mật</li>
-      <li class="list">Nhận thông báo qua email</li>
+      <li class="list">
+        <a href="https://www.">Home Page</a>
+      </li>
+      <li class="list" id="list_about">About me</li>
+      <li class="list">Contact me</li>
     </ul>
-    <label>
-      <input type="checkbox" /> Tôi đồng ý với các điều khoản trên
-    </label>
+
+    <form action="">
+      <input type="checkbox" name="agree" id="agree" /> Đồng ý thỏa thuận bảo
+      mật?
+    </form>
+
+    <!-- js -->
+    <script src="./main.js"></script>
   </body>
 </html>
-<script src="main.js"></script>

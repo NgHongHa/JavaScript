@@ -1,21 +1,34 @@
 /**
  [D]rower [O]bject [M]odel
-
 Document node toan bo tai lieu html
 Element node dai dien cho 1 ptu
 Text node  
 Atrribute node
 
 DOM API
+ */
 
-getElementsByTagName
-  */
-let li_item = document.getElementsByTagName("li");
-li_item[2].innerHTML = "thay doi bang tagname";
-//getElementsByClassName
-let li_class_item = document.getElementsByClassName("list");
-console.log(li_class_item);
-li_class_item[0].innerHTML = "thay doi  bang inerhtml";
-//getElementsByID
-let chose = document.getElementById("list chose");
-chose.innerHTML = "thay doi bang id";
+//. querySelector
+// Chọn phần tử có id là "heading_title" và thay đổi nội dung của nó
+let title = document.querySelector("#heading_title");
+console.log(title);
+title.innerHTML = "New Title";
+
+// Chọn phần tử đầu tiên có lớp là "list" thay đổi nội dung
+let firstListItem = document.querySelector(".list");
+// firstListItem.innerHTML = "Trang Chủ";
+
+//Quan trọng, querySelector có thể chọn css kết hợp
+//(xem lại series web.tuhoc.cc từ bài 27)
+let firstLinkInList = document.querySelector("ul a");
+console.log(firstLinkInList);
+
+// Chọn phần tử input checkbox và đặt thuộc tính checked cho nó
+let checkbox = document.querySelector("input");
+checkbox.checked = true;
+
+//querySelectorAll
+let list_item = document.querySelectorAll("li");
+console.log(list_item);
+
+list_item[1].innerHTML = "Liên hệ với chúng tôi";
