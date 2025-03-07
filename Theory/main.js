@@ -1,39 +1,29 @@
-// bt
-// class cha
-class Shape {
-  constructor(name) {
+//Getter and Setter JavaScript
+class School {
+  constructor(id, name, birthYear, score) {
+    this.id = id;
     this.name = name;
+    this.birthYear = id;
+    this._score = score; // thêm dấu _ để thể hiện nó ở trạng thái được bảo vệ ( cái này là tự quy ước)
   }
-  // phuong thu tinh dien tic, mac dinh return ve 0
-  calcArea() {
-    return 0;
+  // phương thức
+  calcAger(currentYear) {
+    return currentYear - this.birthYear;
   }
-}
-// lop con hinh vuong
-class Square extends Shape {
-  constructor(name, size) {
-    super(name);
-    this.size = size;
+  // getter cho thuộc tính
+  get score() {
+    return this._score;
   }
-  // ghi de phuong thuc tinh dien tich
-  calcArea() {
-    return this.size * this.size;
-  }
-}
-// lop con hcm
-class Rectangle extends Shape {
-  constructor(name, width, height) {
-    super(name);
-    this.width = width;
-    this.height = height;
-  }
-  // override phuong thuc tinh dien tich hcn
-  calcArea() {
-    return this.width * this.height;
+  // setter cho thuộc tính
+  set score(value) {
+    // thêm biểu thức logic kiểm tra
+    if (vale >= 0 && value <= 100) {
+      this._score = value;
+    } else {
+      console.log("ko hợp lệ");
+    }
   }
 }
-// toa cac doi tuong hinh
-const sq1 = new Square("hinh vuong", 4);
-const rec1 = new Rectangle("hcn", 4, 6);
-console.log(sq1.calcArea());
-console.log(rec1.calcArea());
+// tạo đối tượng
+const ha = new School("p1", "Ha", 2003, 95);
+console.log(ha.id);
