@@ -8,27 +8,38 @@ Atrribute node
 DOM API
  */
 
-//. querySelector
-// Chọn phần tử có id là "heading_title" và thay đổi nội dung của nó
-let title = document.querySelector("#heading_title");
-console.log(title);
-title.innerHTML = "New Title";
+//. getAttribute
+const firtsLink = document.querySelector("a");
+const linkHref = firtsLink.getAttribute("href"); // getAttribute
+console.log(linkHref);
+firtsLink.setAttribute("target", "blank");
+// su dung all the a trong ul
+const link = document.querySelectorAll("ul a");
+link.forEach((singerlinhk) => {
+  singerlinhk.setAttribute("target", "blank"); // setAttribute
+});
+// Sử dụng querySelector để chọn phần tử đầu tiên có class là "list"
+const item1 = document.querySelector(".list");
 
-// Chọn phần tử đầu tiên có lớp là "list" thay đổi nội dung
-let firstListItem = document.querySelector(".list");
-// firstListItem.innerHTML = "Trang Chủ";
+// hasAttribute
+// Kiểm tra xem phần tử có thuộc tính class không ?
+console.log(item1.hasAttribute("class"));
 
-//Quan trọng, querySelector có thể chọn css kết hợp
-//(xem lại series web.tuhoc.cc từ bài 27)
-let firstLinkInList = document.querySelector("ul a");
-console.log(firstLinkInList);
+const item2 = document.querySelector("#heading_title");
+console.log(item2.hasAttribute("style"));
 
-// Chọn phần tử input checkbox và đặt thuộc tính checked cho nó
-let checkbox = document.querySelector("input");
-checkbox.checked = true;
+// .removeAttribute
+// Loại bỏ 1 thuộc tính khỏi phần tử
+item2.removeAttribute("style");
 
-//querySelectorAll
-let list_item = document.querySelectorAll("li");
-console.log(list_item);
+// Kiểm tra lại xem thuộc tính style đã bị loại bỏ hay chưa?
+console.log(item2.hasAttribute("style"));
 
-list_item[1].innerHTML = "Liên hệ với chúng tôi";
+//Bài tập: Xóa toàn bộ thuộc tính href trong các thẻ a nằm trong ul
+// Chọn tất cả các thẻ a trong phần tử ul
+const anchorTags = document.querySelectorAll("ul a");
+
+// Lặp qua từng thẻ a và xóa thuộc tính href
+anchorTags.forEach((anchor) => {
+  anchor.removeAttribute("href");
+});
